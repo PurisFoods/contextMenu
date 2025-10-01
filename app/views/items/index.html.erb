@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Items" %>
+
+<h1>Items</h1>
+
+<div data-controller="context-menu">
+<ul>
+  <% @items.each do |item| %>
+    <li data-item-id="<%= item.id %>">
+      <%= item.name %>
+    </li>
+  <% end %>
+</ul>
+
+<div data-context-menu-target="menu" style="display:none; position:absolute; background:#fff; border:1px solid #ccc; z-index:1000;">
+  <ul>
+    <li data-action="click->context-menu#edit">Edit</li>
+    <li data-action="click->context-menu#delete">Delete</li>
+  </ul>
+</div>
+</div>
+<%= link_to "New item", new_item_path %>
