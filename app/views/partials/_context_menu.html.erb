@@ -1,0 +1,32 @@
+// filepath: /home/rileyalexis/gitwork/contextMenu/app/views/shared/_context_menu.html.erb
+<div data-context-menu-target="menu" class="context-menu" style="display: none;">
+  <ul>
+    <%= yield %>
+  </ul>
+</div>
+
+<style>
+  .context-menu {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    padding: 0.3em 0;
+    min-width: 150px;
+  }
+  .context-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .context-menu a {
+    display: block;
+    padding: 0.3em 0.5em;
+    text-decoration: none;
+    color: #333;
+  }
+  .context-menu a:hover {
+    background-color: #f0f0f0;
+  }
+</style>
